@@ -1,4 +1,4 @@
-import 'package:finance_app/ui/sign_in.dart';
+import 'package:finance_app/auth/sign_in.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
