@@ -77,9 +77,10 @@ class AddExpense extends ConsumerWidget {
             ),
             GestureDetector(
               onTap: () {
-                String amount = amountControler.text;
+                String amountStr = amountControler.text;
                 String cat = categoryControler.text;
-                if (amount != '' && cat != '') {
+                if (amountStr != '' && cat != '') {
+                  double amount = double.parse(amountStr);
                   ref
                       .read(expenseNotifierProvider.notifier)
                       .addExpense(amount, cat, context);

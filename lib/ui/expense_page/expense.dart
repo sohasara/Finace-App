@@ -64,7 +64,7 @@ class Expense extends StatelessWidget {
                   itemCount: expense.length,
                   itemBuilder: (context, index) {
                     return ShowExpense(
-                      amount: expense[index].amount,
+                      amount: expense[index].amount.toString(),
                       cat: expense[index].category,
                       date: formatedDate,
                       button: IconButton(
