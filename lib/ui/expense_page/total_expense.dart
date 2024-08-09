@@ -14,7 +14,7 @@ class TotalExpensePage extends ConsumerWidget {
         );
     return Container(
       height: 220,
-      width: 350,
+      width: 400,
       decoration: BoxDecoration(
         gradient: const LinearGradient(
           colors: [

@@ -12,9 +12,56 @@ class Savings extends StatelessWidget {
         title: const Text(
           'SAVINGS ',
           style: TextStyle(
-            color: Colors.blue,
+            color: Colors.purple,
             fontWeight: FontWeight.bold,
           ),
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 10.0,
+                top: 10,
+              ),
+              child: Container(
+                padding: const EdgeInsets.all(8),
+                height: 250,
+                width: 400,
+                decoration: BoxDecoration(
+                  color: Colors.purple[100],
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: const Column(
+                  //crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 60,
+                    ),
+                    Text(
+                      'Total Saved Money',
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      '\$4000000',
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
