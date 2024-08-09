@@ -28,7 +28,7 @@ class Savings extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(10.0),
         child: Column(
           children: [
             Padding(
@@ -72,6 +72,14 @@ class Savings extends StatelessWidget {
                 ),
               ),
             ),
+            const Text(
+              'HISTORY',
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.w900,
+                //color: Colors.purple[600],
+              ),
+            )
           ],
         ),
       ),
