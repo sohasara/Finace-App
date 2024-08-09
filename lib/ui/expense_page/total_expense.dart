@@ -1,10 +1,17 @@
-import 'package:flutter/material.dart';
+import 'package:finance_app/state/expense_state/expense_provider.dart';
 
-class TotalExpensePage extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+class TotalExpensePage extends ConsumerWidget {
   const TotalExpensePage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final totalExpense = ref.watch(expenseNotifierProvider).fold<double>(
+          0.0,
+          (sum, expense) => sum + expense.amount,
+        );
     return Container(
       height: 220,
       width: 350,
@@ -35,19 +42,19 @@ class TotalExpensePage extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
+              const Icon(
                 Icons.arrow_circle_down,
                 size: 50,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Text(
-                '400',
-                style: TextStyle(
+                totalExpense.toString(),
+                style: const TextStyle(
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
                 ),
