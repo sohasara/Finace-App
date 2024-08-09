@@ -23,6 +23,7 @@ class Savings extends StatelessWidget {
           style: TextStyle(
             color: Colors.purple,
             fontWeight: FontWeight.bold,
+            fontSize: 28,
           ),
         ),
       ),
@@ -54,7 +55,7 @@ class Savings extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                        color: Colors.white,
                       ),
                     ),
                     SizedBox(
@@ -65,7 +66,6 @@ class Savings extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 35,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
                       ),
                     ),
                   ],
