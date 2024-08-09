@@ -1,5 +1,6 @@
 //import 'package:finance_app/auth/sign_in.dart';
 import 'package:finance_app/database/expense_model/expense_model.dart';
+import 'package:finance_app/database/income_model/income_model.dart';
 import 'package:finance_app/ui/navigation.dart';
 
 import 'package:flutter/material.dart';
@@ -10,6 +11,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   Hive.registerAdapter(ExpenseModelAdapter());
+  Hive.registerAdapter(IncomeModelAdapter());
 
   runApp(
     const ProviderScope(
