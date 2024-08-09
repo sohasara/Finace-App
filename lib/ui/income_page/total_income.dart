@@ -1,10 +1,16 @@
+import 'package:finance_app/state/income_state.dart/income_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class TotalIncome extends StatelessWidget {
+class TotalIncome extends ConsumerWidget {
   const TotalIncome({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final totalIncome = ref.watch(incomeNOtifierProvider).fold<double>(
+          0.0,
+          (sum, income) => sum + income.amount,
+        );
     return Container(
       height: 220,
       width: 350,
@@ -19,12 +25,12 @@ class TotalIncome extends StatelessWidget {
         ),
         borderRadius: BorderRadius.circular(22),
       ),
-      child: const Column(
+      child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 40,
           ),
-          Text(
+          const Text(
             'Total Income',
             style: TextStyle(
               fontSize: 33,
@@ -32,22 +38,22 @@ class TotalIncome extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
+              const Icon(
                 Icons.arrow_circle_up,
                 size: 45,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Text(
-                '400',
-                style: TextStyle(
+                totalIncome.toString(),
+                style: const TextStyle(
                   fontSize: 40,
                   fontWeight: FontWeight.w800,
                 ),
