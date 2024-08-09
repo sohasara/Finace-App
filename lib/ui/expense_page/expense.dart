@@ -5,6 +5,7 @@ import 'package:finance_app/ui/expense_page/add_expense.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:intl/intl.dart';
 
 class Expense extends StatelessWidget {
@@ -63,20 +64,36 @@ class Expense extends StatelessWidget {
                 child: ListView.builder(
                   itemCount: expense.length,
                   itemBuilder: (context, index) {
-                    return ShowExpense(
-                      amount: expense[index].amount.toString(),
-                      cat: expense[index].category,
-                      date: formatedDate,
-                      button: IconButton(
-                        onPressed: () {
-                          ref
-                              .read(expenseNotifierProvider.notifier)
-                              .removeExpense(index);
-                        },
-                        icon: const Icon(
-                          Icons.delete,
-                          color: Colors.red,
-                        ),
+                    return Slidable(
+                      startActionPane: ActionPane(
+                        motion: const ScrollMotion(),
+                        children: [
+                          SlidableAction(
+                            onPressed: (context) {},
+                            padding: const EdgeInsets.all(10),
+                            backgroundColor: Colors.blue,
+                            foregroundColor: Colors.white,
+                            icon: Icons.edit,
+                            label: 'Edit',
+                          ),
+                          SlidableAction(
+                            onPressed: (context) {
+                              ref
+                                  .read(expenseNotifierProvider.notifier)
+                                  .removeExpense(index);
+                            },
+                            padding: const EdgeInsets.all(10),
+                            backgroundColor: Colors.red,
+                            foregroundColor: Colors.white,
+                            icon: Icons.delete,
+                            label: 'Delete',
+                          ),
+                        ],
+                      ),
+                      child: ShowExpense(
+                        amount: expense[index].amount.toString(),
+                        cat: expense[index].category,
+                        date: formatedDate,
                       ),
                     );
                   },

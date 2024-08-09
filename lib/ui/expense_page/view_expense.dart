@@ -4,13 +4,12 @@ class ShowExpense extends StatelessWidget {
   final String amount;
   final String date;
   final String cat;
-  final IconButton button;
+
   const ShowExpense({
     super.key,
     required this.amount,
     required this.cat,
     required this.date,
-    required this.button,
   });
 
   @override
@@ -60,7 +59,6 @@ class ShowExpense extends StatelessWidget {
             const SizedBox(
               width: 20,
             ),
-            button,
           ],
         ),
       ),
