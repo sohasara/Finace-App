@@ -31,7 +31,7 @@ class Savings extends StatelessWidget {
                 height: 250,
                 width: 400,
                 decoration: BoxDecoration(
-                  color: Colors.purple[100],
+                  color: Colors.purple[200],
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: const Column(
