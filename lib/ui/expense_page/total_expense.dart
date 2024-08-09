@@ -26,41 +26,43 @@ class TotalExpensePage extends ConsumerWidget {
         ),
         borderRadius: BorderRadius.circular(22),
       ),
-      child: Column(children: [
-        const SizedBox(
-          height: 40,
-        ),
-        Text(
-          'Total Expense',
-          style: TextStyle(
-            fontSize: 33,
-            color: Colors.red[900],
-            fontWeight: FontWeight.w900,
+      child: Column(
+        children: [
+          const SizedBox(
+            height: 40,
           ),
-        ),
-        const SizedBox(
-          height: 10,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Icon(
-              Icons.arrow_circle_down,
-              size: 50,
+          Text(
+            'Total Expense',
+            style: TextStyle(
+              fontSize: 33,
+              color: Colors.red[900],
+              fontWeight: FontWeight.w900,
             ),
-            const SizedBox(
-              width: 10,
-            ),
-            Text(
-              totalExpense.toString(),
-              style: const TextStyle(
-                fontSize: 40,
-                fontWeight: FontWeight.bold,
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Icon(
+                Icons.arrow_circle_down,
+                size: 50,
               ),
-            )
-          ],
-        ),
-      ]),
+              const SizedBox(
+                width: 10,
+              ),
+              Text(
+                totalExpense.toString(),
+                style: const TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                ),
+              )
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
