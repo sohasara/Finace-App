@@ -72,7 +72,7 @@ class IncomePage extends StatelessWidget {
                   itemCount: income.length,
                   itemBuilder: (context, index) {
                     return ShowIncome(
-                      amount: income[index].amount,
+                      amount: income[index].amount.toString(),
                       cat: income[index].category,
                       date: formatedDate,
                       button: IconButton(

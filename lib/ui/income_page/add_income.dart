@@ -79,9 +79,10 @@ class AddIncome extends ConsumerWidget {
               onTap: () {
                 final String amount = amountController.text;
                 final String category = categoryController.text;
+
                 ref
                     .read(incomeNOtifierProvider.notifier)
-                    .addIncome(amount, category);
+                    .addIncome(double.parse(amount), category);
                 Navigator.pop(context);
               },
               child: Center(
