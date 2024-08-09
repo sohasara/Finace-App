@@ -17,6 +17,22 @@ class IncomePage extends StatelessWidget {
     String formatedDate = DateFormat('dd-MM-yyyy').format(date);
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const AddIncome(),
+                ),
+              );
+            },
+            icon: const Icon(
+              Icons.add_circle,
+              size: 30,
+            ),
+          ),
+        ],
         centerTitle: true,
         title: Text(
           'INCOMES',
@@ -42,19 +58,6 @@ class IncomePage extends StatelessWidget {
               ),
             ),
           ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const AddIncome(),
-            ),
-          );
-        },
-        child: const Icon(
-          Icons.add,
         ),
       ),
       body: Consumer(builder: (context, ref, index) {
