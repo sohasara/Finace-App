@@ -8,6 +8,12 @@ class Savings extends StatelessWidget {
     return Scaffold(
       drawer: const Drawer(),
       appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.account_circle),
+          ),
+        ],
         centerTitle: true,
         title: const Text(
           'SAVINGS ',
