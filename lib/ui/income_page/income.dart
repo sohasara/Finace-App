@@ -78,9 +78,8 @@ class IncomePage extends StatelessWidget {
                         motion: const ScrollMotion(),
                         children: [
                           SlidableAction(
-                            onPressed: (context) {
-                              // Handle edit action here
-                            },
+                            onPressed: (context) {},
+                            padding: const EdgeInsets.all(10),
                             backgroundColor: Colors.blue,
                             foregroundColor: Colors.white,
                             icon: Icons.edit,
@@ -88,11 +87,11 @@ class IncomePage extends StatelessWidget {
                           ),
                           SlidableAction(
                             onPressed: (context) {
-                              //  delete action here
                               ref
                                   .read(incomeNOtifierProvider.notifier)
                                   .removeIncome(index);
                             },
+                            padding: const EdgeInsets.all(10),
                             backgroundColor: Colors.red,
                             foregroundColor: Colors.white,
                             icon: Icons.delete,

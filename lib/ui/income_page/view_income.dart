@@ -42,7 +42,7 @@ class ShowIncome extends StatelessWidget {
             Text(
               cat,
               style: const TextStyle(
-                fontSize: 18,
+                fontSize: 17,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -52,7 +52,7 @@ class ShowIncome extends StatelessWidget {
             Text(
               date,
               style: const TextStyle(
-                fontSize: 18,
+                fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
             ),
