@@ -4,8 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 final expenseBoxProvider = FutureProvider<Box<ExpenseModel>>((ref) async {
-  await Hive.initFlutter();
-  Hive.registerAdapter(ExpenseModelAdapter());
   return await Hive.openBox<ExpenseModel>('expenseBox');
 });
 
