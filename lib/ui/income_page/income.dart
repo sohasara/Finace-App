@@ -4,17 +4,16 @@ import 'package:finance_app/ui/income_page/total_income.dart';
 import 'package:finance_app/ui/income_page/view_income.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:intl/intl.dart';
 
 class IncomePage extends StatelessWidget {
-  const IncomePage({
-    super.key,
-  });
+  const IncomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     final DateTime date = DateTime.now();
-    String formatedDate = DateFormat('dd-MM-yyyy').format(date);
+    String formattedDate = DateFormat('dd-MM-yyyy').format(date);
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -74,20 +73,37 @@ class IncomePage extends StatelessWidget {
                 child: ListView.builder(
                   itemCount: income.length,
                   itemBuilder: (context, index) {
-                    return ShowIncome(
-                      amount: income[index].amount.toString(),
-                      cat: income[index].category,
-                      date: formatedDate,
-                      button: IconButton(
-                        onPressed: () {
-                          ref
-                              .read(incomeNOtifierProvider.notifier)
-                              .removeIncome(index);
-                        },
-                        icon: const Icon(
-                          Icons.delete,
-                          color: Colors.red,
-                        ),
+                    return Slidable(
+                      startActionPane: ActionPane(
+                        motion: const ScrollMotion(),
+                        children: [
+                          SlidableAction(
+                            onPressed: (context) {
+                              // Handle edit action here
+                            },
+                            backgroundColor: Colors.blue,
+                            foregroundColor: Colors.white,
+                            icon: Icons.edit,
+                            label: 'Edit',
+                          ),
+                          SlidableAction(
+                            onPressed: (context) {
+                              //  delete action here
+                              ref
+                                  .read(incomeNOtifierProvider.notifier)
+                                  .removeIncome(index);
+                            },
+                            backgroundColor: Colors.red,
+                            foregroundColor: Colors.white,
+                            icon: Icons.delete,
+                            label: 'Delete',
+                          ),
+                        ],
+                      ),
+                      child: ShowIncome(
+                        amount: income[index].amount.toString(),
+                        cat: income[index].category,
+                        date: formattedDate,
                       ),
                     );
                   },
