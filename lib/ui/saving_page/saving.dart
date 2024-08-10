@@ -72,6 +72,9 @@ class Savings extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(
+              height: 10,
+            ),
             const Text(
               'HISTORY',
               style: TextStyle(
