@@ -82,7 +82,12 @@ class Savings extends StatelessWidget {
                 fontWeight: FontWeight.w900,
                 //color: Colors.purple[600],
               ),
-            )
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemBuilder: (context, index) {},
+              ),
+            ),
           ],
         ),
       ),
