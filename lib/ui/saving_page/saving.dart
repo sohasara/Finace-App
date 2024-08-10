@@ -39,7 +39,7 @@ class Savings extends StatelessWidget {
               ),
               child: Container(
                 padding: const EdgeInsets.all(8),
-                height: 250,
+                height: 220,
                 width: 400,
                 decoration: BoxDecoration(
                   color: Colors.purple[200],
@@ -49,12 +49,12 @@ class Savings extends StatelessWidget {
                   //crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
-                      height: 60,
+                      height: 40,
                     ),
                     Text(
                       'Total Saved Money',
                       style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 33,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
@@ -65,7 +65,7 @@ class Savings extends StatelessWidget {
                     Text(
                       '\$4000000',
                       style: TextStyle(
-                        fontSize: 35,
+                        fontSize: 40,
                         fontWeight: FontWeight.bold,
                       ),
                     ),

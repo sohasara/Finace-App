@@ -21,7 +21,7 @@ class HistorySaaving extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text(
-              'June  ',
+              'June',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -31,7 +31,7 @@ class HistorySaaving extends StatelessWidget {
               width: 20,
             ),
             Text(
-              '',
+              'Saved Amount',
               style: TextStyle(
                 fontSize: 17,
                 fontWeight: FontWeight.bold,
@@ -41,7 +41,7 @@ class HistorySaaving extends StatelessWidget {
               width: 20,
             ),
             Text(
-              '',
+              '3000000',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
