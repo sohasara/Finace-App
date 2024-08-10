@@ -85,7 +85,12 @@ class Savings extends StatelessWidget {
             ),
             Expanded(
               child: ListView.builder(
-                itemBuilder: (context, index) {},
+                itemCount: 7,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    title: Text('ghjk'),
+                  );
+                },
               ),
             ),
           ],
