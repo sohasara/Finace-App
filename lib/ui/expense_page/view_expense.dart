@@ -31,9 +31,10 @@ class ShowExpense extends StatelessWidget {
           children: [
             Text(
               '\$ $amount ',
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
+                color: Colors.pink[900],
               ),
             ),
             const SizedBox(
@@ -41,9 +42,10 @@ class ShowExpense extends StatelessWidget {
             ),
             Text(
               cat,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
+                color: Colors.pink[900],
               ),
             ),
             const SizedBox(
@@ -51,9 +53,10 @@ class ShowExpense extends StatelessWidget {
             ),
             Text(
               date,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
+                color: Colors.pink[900],
               ),
             ),
             const SizedBox(
