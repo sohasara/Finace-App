@@ -17,7 +17,7 @@ class HistorySaaving extends StatelessWidget {
             22,
           ),
         ),
-        child: const Row(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text(
@@ -25,9 +25,10 @@ class HistorySaaving extends StatelessWidget {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
+                color: Colors.pink[900],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 20,
             ),
             Text(
@@ -35,9 +36,10 @@ class HistorySaaving extends StatelessWidget {
               style: TextStyle(
                 fontSize: 17,
                 fontWeight: FontWeight.bold,
+                color: Colors.pink[900],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 20,
             ),
             Text(
@@ -45,9 +47,10 @@ class HistorySaaving extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
+                color: Colors.pink[900],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 20,
             ),
           ],
