@@ -1,3 +1,4 @@
+import 'package:finance_app/ui/saving_page/saving_history.dart';
 import 'package:flutter/material.dart';
 
 class Savings extends StatelessWidget {
@@ -87,9 +88,7 @@ class Savings extends StatelessWidget {
               child: ListView.builder(
                 itemCount: 7,
                 itemBuilder: (context, index) {
-                  return const ListTile(
-                    title: Text('June'),
-                  );
+                  return HistorySaaving();
                 },
               ),
             ),
