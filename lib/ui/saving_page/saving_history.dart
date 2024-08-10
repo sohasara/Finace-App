@@ -17,7 +17,7 @@ class HistorySaaving extends StatelessWidget {
             22,
           ),
         ),
-        child: Row(
+        child: const Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text(
