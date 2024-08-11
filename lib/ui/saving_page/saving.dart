@@ -1,11 +1,16 @@
+import 'package:finance_app/state/saving_state.dart';
 import 'package:finance_app/ui/saving_page/saving_history.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class Savings extends StatelessWidget {
+class Savings extends ConsumerWidget {
   const Savings({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final savingsAsyncValue = ref.watch(savingsProvider);
+    final savingsHistoryAsyncValue = ref.watch(savingsHistoryProvider);
+
     return Scaffold(
       drawer: const Drawer(),
       appBar: AppBar(
@@ -20,7 +25,7 @@ class Savings extends StatelessWidget {
         ],
         centerTitle: true,
         title: const Text(
-          'SAVINGS ',
+          'SAVINGS',
           style: TextStyle(
             color: Colors.purple,
             fontWeight: FontWeight.bold,
@@ -33,10 +38,7 @@ class Savings extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(
-                left: 10.0,
-                top: 10,
-              ),
+              padding: const EdgeInsets.only(left: 10.0, top: 10),
               child: Container(
                 padding: const EdgeInsets.all(8),
                 height: 220,
@@ -45,51 +47,57 @@ class Savings extends StatelessWidget {
                   color: Colors.purple[200],
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: const Column(
-                  //crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height: 40,
-                    ),
-                    Text(
-                      'Total Saved Money',
-                      style: TextStyle(
-                        fontSize: 33,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                child: savingsAsyncValue.when(
+                  data: (savings) => Column(
+                    children: [
+                      const SizedBox(height: 40),
+                      const Text(
+                        'Total Saved Money',
+                        style: TextStyle(
+                          fontSize: 33,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text(
-                      '\$4000000',
-                      style: TextStyle(
-                        fontSize: 40,
-                        fontWeight: FontWeight.bold,
+                      const SizedBox(height: 10),
+                      Text(
+                        '\$${savings.toStringAsFixed(1)}',
+                        style: const TextStyle(
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
+                  loading: () =>
+                      const Center(child: CircularProgressIndicator()),
+                  error: (err, stack) => Text('Error: $err'),
                 ),
               ),
             ),
-            const SizedBox(
-              height: 10,
-            ),
+            const SizedBox(height: 10),
             const Text(
               'HISTORY',
               style: TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.w900,
-                //color: Colors.purple[600],
               ),
             ),
             Expanded(
-              child: ListView.builder(
-                itemCount: 7,
-                itemBuilder: (context, index) {
-                  return const HistorySaaving();
-                },
+              child: savingsHistoryAsyncValue.when(
+                data: (historyList) => ListView.builder(
+                  itemCount: historyList.length,
+                  itemBuilder: (context, index) {
+                    final historyItem = historyList[index];
+                    return HistorySaaving(
+                      month: historyItem['month'],
+                      savedAmount: historyItem['amount'],
+                    );
+                  },
+                ),
+                loading: () => const Center(child: CircularProgressIndicator()),
+                error: (err, stack) => Text('Error: $err'),
               ),
             ),
           ],

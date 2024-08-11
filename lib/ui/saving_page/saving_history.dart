@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 class HistorySaaving extends StatelessWidget {
-  const HistorySaaving({super.key});
+  final String month;
+  final double savedAmount;
+
+  const HistorySaaving({
+    super.key,
+    required this.month,
+    required this.savedAmount,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -13,43 +20,35 @@ class HistorySaaving extends StatelessWidget {
         height: 65,
         decoration: BoxDecoration(
           border: Border.all(width: .5),
-          borderRadius: BorderRadius.circular(
-            22,
-          ),
+          borderRadius: BorderRadius.circular(22),
         ),
-        child: const Row(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text(
-              'June',
-              style: TextStyle(
+              month,
+              style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(
-              width: 20,
-            ),
-            Text(
+            const SizedBox(width: 20),
+            const Text(
               'Saved Amount',
               style: TextStyle(
                 fontSize: 17,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(
-              width: 20,
-            ),
+            const SizedBox(width: 20),
             Text(
-              '3000000',
-              style: TextStyle(
+              '\$$savedAmount',
+              style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(
-              width: 20,
-            ),
+            const SizedBox(width: 20),
           ],
         ),
       ),
