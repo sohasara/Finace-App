@@ -61,7 +61,7 @@ class Savings extends ConsumerWidget {
                       ),
                       const SizedBox(height: 10),
                       Text(
-                        '\$${savings.toStringAsFixed(1)}',
+                        savings.toStringAsFixed(1),
                         style: const TextStyle(
                           fontSize: 40,
                           fontWeight: FontWeight.bold,
