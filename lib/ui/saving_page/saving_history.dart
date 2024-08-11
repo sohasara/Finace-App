@@ -27,7 +27,7 @@ class HistorySaaving extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(
+            SizedBox(
               width: 20,
             ),
             Text(
@@ -37,7 +37,7 @@ class HistorySaaving extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(
+            SizedBox(
               width: 20,
             ),
             Text(
