@@ -8,8 +8,8 @@ class Savings extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final savingsAsyncValue = ref.watch(savingsProvider);
-    final savingsHistoryAsyncValue = ref.watch(savingsHistoryProvider);
+    final savingValue = ref.watch(savingsProvider);
+    final savingsHistory = ref.watch(savingsHistoryProvider);
 
     return Scaffold(
       drawer: const Drawer(),
@@ -47,7 +47,7 @@ class Savings extends ConsumerWidget {
                   color: Colors.purple[200],
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: savingsAsyncValue.when(
+                child: savingValue.when(
                   data: (savings) => Column(
                     children: [
                       const SizedBox(height: 40),
@@ -69,9 +69,12 @@ class Savings extends ConsumerWidget {
                       ),
                     ],
                   ),
-                  loading: () =>
-                      const Center(child: CircularProgressIndicator()),
-                  error: (err, stack) => Text('Error: $err'),
+                  loading: () {
+                    return const Center(child: CircularProgressIndicator());
+                  },
+                  error: (err, stack) {
+                    return Text('Error: $err');
+                  },
                 ),
               ),
             ),
@@ -84,7 +87,7 @@ class Savings extends ConsumerWidget {
               ),
             ),
             Expanded(
-              child: savingsHistoryAsyncValue.when(
+              child: savingsHistory.when(
                 data: (historyList) => ListView.builder(
                   itemCount: historyList.length,
                   itemBuilder: (context, index) {
