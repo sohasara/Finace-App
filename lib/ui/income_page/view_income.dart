@@ -31,10 +31,9 @@ class ShowIncome extends StatelessWidget {
           children: [
             Text(
               '\$ $amount ',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: Colors.pink[900],
               ),
             ),
             const SizedBox(
@@ -42,10 +41,9 @@ class ShowIncome extends StatelessWidget {
             ),
             Text(
               cat,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 17,
                 fontWeight: FontWeight.bold,
-                color: Colors.pink[900],
               ),
             ),
             const SizedBox(
@@ -53,10 +51,9 @@ class ShowIncome extends StatelessWidget {
             ),
             Text(
               date,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
-                color: Colors.pink[900],
               ),
             ),
             const SizedBox(
