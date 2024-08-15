@@ -56,9 +56,6 @@ class ShowExpense extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(
-              width: 20,
-            ),
           ],
         ),
       ),
