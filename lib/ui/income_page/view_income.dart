@@ -19,11 +19,11 @@ class ShowIncome extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(8),
         width: 400,
-        height: 65,
+        height: 75,
         decoration: BoxDecoration(
           border: Border.all(width: .5),
           borderRadius: BorderRadius.circular(
-            22,
+            18,
           ),
         ),
         child: Row(
