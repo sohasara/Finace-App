@@ -65,28 +65,19 @@ class Expense extends StatelessWidget {
                   itemCount: expense.length,
                   itemBuilder: (context, index) {
                     return Slidable(
-                      startActionPane: ActionPane(
+                      endActionPane: ActionPane(
                         motion: const ScrollMotion(),
                         children: [
-                          SlidableAction(
-                            onPressed: (context) {},
-                            padding: const EdgeInsets.all(10),
-                            backgroundColor: Colors.blue,
-                            foregroundColor: Colors.white,
-                            icon: Icons.edit,
-                            label: 'Edit',
-                          ),
                           SlidableAction(
                             onPressed: (context) {
                               ref
                                   .read(expenseNotifierProvider.notifier)
                                   .removeExpense(index);
                             },
-                            padding: const EdgeInsets.all(10),
                             backgroundColor: Colors.red,
                             foregroundColor: Colors.white,
                             icon: Icons.delete,
-                            label: 'Delete',
+                            borderRadius: BorderRadius.circular(18),
                           ),
                         ],
                       ),
