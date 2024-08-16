@@ -7,27 +7,17 @@ final expenseBoxProvider = FutureProvider<Box<ExpenseModel>>((ref) async {
   return await Hive.openBox<ExpenseModel>('expenseBox');
 });
 
-// final expenseNotifierProvider =
-//     StateNotifierProvider<ExpenseNotifier, List<ExpenseModel>>((ref) {
-//   final box = ref.watch(expenseBoxProvider).maybeWhen(
-//         data: (data) => data,
-//         orElse: () => null,
-//       );
-//   return ExpenseNotifier(box);
-// });
-
 final expenseNotifierProvider =
     StateNotifierProvider<ExpenseNotifier, List<ExpenseModel>>((ref) {
   final box = ref.watch(expenseBoxProvider).when(
         data: (data) => data,
-        loading: () => null, // While loading, we return null
-        error: (err, stack) => null, // Handle error, but return null for now
+        loading: () => null,
+        error: (err, stack) => null,
       );
 
   if (box != null) {
-    return ExpenseNotifier(box); // Initialize with the box when ready
+    return ExpenseNotifier(box);
   } else {
-    return ExpenseNotifier(
-        null); // Return an empty notifier while loading or on error
+    return ExpenseNotifier(null);
   }
 });
