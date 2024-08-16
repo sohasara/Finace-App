@@ -5,15 +5,12 @@ import 'package:finance_app/ui/expense_page/add_expense.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:intl/intl.dart';
 
 class Expense extends StatelessWidget {
   const Expense({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final DateTime date = DateTime.now();
-    String formatedDate = DateFormat('dd-MM-yyyy').format(date);
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -83,7 +80,7 @@ class Expense extends StatelessWidget {
                       child: ShowExpense(
                         amount: expense[index].amount.toString(),
                         cat: expense[index].category,
-                        date: formatedDate,
+                        date: expense[index].time,
                       ),
                     );
                   },
