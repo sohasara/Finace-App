@@ -12,6 +12,8 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(ExpenseModelAdapter());
   Hive.registerAdapter(IncomeModelAdapter());
+  // await Hive.deleteBoxFromDisk('expenseBox');
+  // await Hive.deleteBoxFromDisk('incomeBox');
 
   runApp(
     const ProviderScope(

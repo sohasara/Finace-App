@@ -9,8 +9,11 @@ class IncomeModel extends HiveObject {
   final double amount;
   @HiveField(1)
   final String category;
+  @HiveField(2)
+  final String time;
   IncomeModel({
     required this.amount,
     required this.category,
+    required this.time,
   });
 }

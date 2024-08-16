@@ -19,17 +19,20 @@ class IncomeModelAdapter extends TypeAdapter<IncomeModel> {
     return IncomeModel(
       amount: fields[0] as double,
       category: fields[1] as String,
+      time: fields[2] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, IncomeModel obj) {
     writer
-      ..writeByte(2)
+      ..writeByte(3)
       ..writeByte(0)
       ..write(obj.amount)
       ..writeByte(1)
-      ..write(obj.category);
+      ..write(obj.category)
+      ..writeByte(2)
+      ..write(obj.time);
   }
 
   @override

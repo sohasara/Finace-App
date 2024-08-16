@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:finance_app/state/expense_state/expense_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -84,21 +86,12 @@ class AddExpense extends ConsumerWidget {
                 String cat = categoryControler.text;
                 if (amountStr != '' && cat != '') {
                   double amount = double.parse(amountStr);
+
                   ref
                       .read(expenseNotifierProvider.notifier)
-                      .addExpense(amount, cat, context, formatedDate);
+                      .addExpense(amount, cat, formatedDate);
 
                   Navigator.pop(context);
-                } else {
-                  showDialog(
-                      context: context,
-                      builder: (context) {
-                        return const AlertDialog(
-                          content: Text(
-                            'you are not enter your amount or category ',
-                          ),
-                        );
-                      });
                 }
               },
               child: Center(

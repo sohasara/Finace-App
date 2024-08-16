@@ -5,15 +5,12 @@ import 'package:finance_app/ui/income_page/view_income.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:intl/intl.dart';
 
 class IncomePage extends StatelessWidget {
   const IncomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final DateTime date = DateTime.now();
-    String formattedDate = DateFormat('dd-MM-yyyy').format(date);
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -96,7 +93,7 @@ class IncomePage extends StatelessWidget {
                       child: ShowIncome(
                         amount: income[index].amount.toString(),
                         cat: income[index].category,
-                        date: formattedDate,
+                        date: income[index].time,
                       ),
                     );
                   },
