@@ -2,7 +2,6 @@ import 'package:finance_app/state/expense_state/expense_provider.dart';
 import 'package:finance_app/ui/expense_page/total_expense.dart';
 import 'package:finance_app/ui/expense_page/view_expense.dart';
 import 'package:finance_app/ui/expense_page/add_expense.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
