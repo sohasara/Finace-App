@@ -19,17 +19,20 @@ class ExpenseModelAdapter extends TypeAdapter<ExpenseModel> {
     return ExpenseModel(
       amount: fields[0] as double,
       category: fields[1] as String,
+      time: fields[2] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, ExpenseModel obj) {
     writer
-      ..writeByte(2)
+      ..writeByte(3)
       ..writeByte(0)
       ..write(obj.amount)
       ..writeByte(1)
-      ..write(obj.category);
+      ..write(obj.category)
+      ..writeByte(2)
+      ..write(obj.time);
   }
 
   @override

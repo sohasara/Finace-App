@@ -17,10 +17,12 @@ class ExpenseNotifier extends StateNotifier<List<ExpenseModel>> {
     }
   }
 
-  void addExpense(double amount, String category, BuildContext context) {
+  void addExpense(
+      double amount, String category, BuildContext context, String time) {
     if (_box == null) return;
 
-    final expense = ExpenseModel(amount: amount, category: category);
+    final expense =
+        ExpenseModel(amount: amount, category: category, time: time);
     _box.add(expense);
     state = [...state, expense];
   }

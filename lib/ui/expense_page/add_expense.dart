@@ -1,12 +1,15 @@
 import 'package:finance_app/state/expense_state/expense_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/intl.dart';
 
 class AddExpense extends ConsumerWidget {
   const AddExpense({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final DateTime date = DateTime.now();
+    String formatedDate = DateFormat('dd-MM-yyyy').format(date);
     TextEditingController amountControler = TextEditingController();
     TextEditingController categoryControler = TextEditingController();
     return Scaffold(
@@ -83,7 +86,7 @@ class AddExpense extends ConsumerWidget {
                   double amount = double.parse(amountStr);
                   ref
                       .read(expenseNotifierProvider.notifier)
-                      .addExpense(amount, cat, context);
+                      .addExpense(amount, cat, context, formatedDate);
 
                   Navigator.pop(context);
                 } else {
