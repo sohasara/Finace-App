@@ -78,6 +78,7 @@ class AddIncome extends ConsumerWidget {
             const SizedBox(
               height: 25,
             ),
+            TextField(),
             GestureDetector(
               onTap: () {
                 final String amount = amountController.text;
