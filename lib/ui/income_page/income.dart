@@ -1,5 +1,6 @@
 import 'package:finance_app/state/income_state.dart/income_provider.dart';
 import 'package:finance_app/ui/income_page/add_income.dart';
+import 'package:finance_app/ui/income_page/income_detailes.dart';
 import 'package:finance_app/ui/income_page/total_income.dart';
 import 'package:finance_app/ui/income_page/view_income.dart';
 import 'package:flutter/material.dart';
@@ -90,10 +91,20 @@ class IncomePage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      child: ShowIncome(
-                        amount: income[index].amount.toString(),
-                        cat: income[index].category,
-                        date: income[index].time,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const DetailesIncome(),
+                            ),
+                          );
+                        },
+                        child: ShowIncome(
+                          amount: income[index].amount.toString(),
+                          cat: income[index].category,
+                          date: income[index].time,
+                        ),
                       ),
                     );
                   },
