@@ -78,11 +78,17 @@ class AddIncome extends ConsumerWidget {
             const SizedBox(
               height: 25,
             ),
-            TextField(
-              decoration: InputDecoration(
-                contentPadding: const EdgeInsets.symmetric(vertical: 80),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(18),
+            SizedBox(
+              height: 150,
+              child: TextField(
+                textAlign: TextAlign.start,
+                textAlignVertical: TextAlignVertical.top,
+                expands: true,
+                maxLines: null,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(18),
+                  ),
                 ),
               ),
             ),
