@@ -16,11 +16,12 @@ class IncomeNotifier extends StateNotifier<List<IncomeModel>> {
     }
   }
 
-  void addIncome(double amount, String cat, String time) {
+  void addIncome(double amount, String cat, String time, String dis) {
     if (_box == null) {
       return;
     } else {
-      final income = IncomeModel(amount: amount, category: cat, time: time);
+      final income = IncomeModel(
+          amount: amount, category: cat, time: time, discirption: dis);
       _box.add(income);
       state = [...state, income];
     }
