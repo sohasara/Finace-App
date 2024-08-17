@@ -12,6 +12,7 @@ class AddIncome extends ConsumerWidget {
     String formattedDate = DateFormat('dd-MM-yyyy').format(date);
     TextEditingController amountController = TextEditingController();
     TextEditingController categoryController = TextEditingController();
+    TextEditingController discriptionController = TextEditingController();
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -87,6 +88,7 @@ class AddIncome extends ConsumerWidget {
             SizedBox(
               height: 150,
               child: TextField(
+                controller: discriptionController,
                 textAlign: TextAlign.start,
                 textAlignVertical: TextAlignVertical.top,
                 expands: true,
