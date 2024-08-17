@@ -41,7 +41,7 @@ class AddIncome extends ConsumerWidget {
               height: 20,
             ),
             const Text(
-              'Enter the Amount : ',
+              ' Amount : ',
               style: TextStyle(
                 fontSize: 23,
               ),
@@ -60,7 +60,7 @@ class AddIncome extends ConsumerWidget {
               height: 20,
             ),
             const Text(
-              'Enter the Catergory : ',
+              ' Catergory : ',
               style: TextStyle(
                 fontSize: 23,
               ),
@@ -76,7 +76,13 @@ class AddIncome extends ConsumerWidget {
               ),
             ),
             const SizedBox(
-              height: 25,
+              height: 20,
+            ),
+            const Text(
+              ' Discription: ',
+              style: TextStyle(
+                fontSize: 23,
+              ),
             ),
             SizedBox(
               height: 150,
@@ -91,6 +97,9 @@ class AddIncome extends ConsumerWidget {
                   ),
                 ),
               ),
+            ),
+            const SizedBox(
+              height: 25,
             ),
             GestureDetector(
               onTap: () {
