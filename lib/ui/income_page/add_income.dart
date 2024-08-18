@@ -28,7 +28,7 @@ class AddIncome extends ConsumerWidget {
         title: const Text(
           'ADD YOUR INCOME ',
           style: TextStyle(
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w800,
             color: Colors.green,
           ),
         ),
@@ -41,10 +41,11 @@ class AddIncome extends ConsumerWidget {
             const SizedBox(
               height: 20,
             ),
-            const Text(
+            Text(
               ' Amount : ',
               style: TextStyle(
                 fontSize: 23,
+                color: Colors.green[700],
               ),
             ),
             TextField(
@@ -60,10 +61,11 @@ class AddIncome extends ConsumerWidget {
             const SizedBox(
               height: 20,
             ),
-            const Text(
+            Text(
               ' Catergory : ',
               style: TextStyle(
                 fontSize: 23,
+                color: Colors.green[700],
               ),
             ),
             TextField(
@@ -79,10 +81,11 @@ class AddIncome extends ConsumerWidget {
             const SizedBox(
               height: 20,
             ),
-            const Text(
-              ' Discription: ',
+            Text(
+              ' Discription (Optional) : ',
               style: TextStyle(
                 fontSize: 23,
+                color: Colors.green[700],
               ),
             ),
             SizedBox(
@@ -115,8 +118,8 @@ class AddIncome extends ConsumerWidget {
               },
               child: Center(
                 child: Container(
-                  height: 50,
-                  width: 160,
+                  height: 55,
+                  width: 180,
                   decoration: const BoxDecoration(
                     color: Colors.green,
                     borderRadius: BorderRadius.all(
