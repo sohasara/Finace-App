@@ -33,9 +33,9 @@ class DetailesIncome extends StatelessWidget {
         child: Column(
           children: [
             Details(text1: 'Amount:', text2: amount),
-            Text(des!),
-            Text(cat),
-            Text(time),
+            Details(text1: 'Category:', text2: cat),
+            Details(text1: 'Time:', text2: time),
+            Details(text1: 'Description:', text2: des!),
           ],
         ),
       ),
