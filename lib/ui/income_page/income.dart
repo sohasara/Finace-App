@@ -36,8 +36,8 @@ class IncomePage extends StatelessWidget {
           'INCOMES',
           style: TextStyle(
             fontSize: 28,
-            fontWeight: FontWeight.bold,
-            color: Colors.green[700],
+            fontWeight: FontWeight.w800,
+            color: Colors.green[600],
           ),
         ),
       ),
