@@ -96,7 +96,11 @@ class IncomePage extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const DetailesIncome(),
+                              builder: (context) => DetailesIncome(
+                                amount: income[index].amount.toString(),
+                                des: income[index].discirption,
+                                cat: income[index].category,
+                              ),
                             ),
                           );
                         },
