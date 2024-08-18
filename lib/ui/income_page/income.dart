@@ -1,6 +1,7 @@
 import 'package:finance_app/state/income_state.dart/income_provider.dart';
 import 'package:finance_app/ui/income_page/add_income.dart';
 import 'package:finance_app/ui/income_page/income_detailes.dart';
+import 'package:finance_app/ui/income_page/income_drawer.dart';
 import 'package:finance_app/ui/income_page/total_income.dart';
 import 'package:finance_app/ui/income_page/view_income.dart';
 import 'package:flutter/material.dart';
@@ -42,21 +43,7 @@ class IncomePage extends StatelessWidget {
         ),
       ),
       drawer: const Drawer(
-        child: Column(
-          children: [
-            Icon(
-              Icons.account_circle,
-              size: 100,
-            ),
-            Text(
-              'Nadia',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
+        child: IncomeDrawer(),
       ),
       body: Consumer(builder: (context, ref, index) {
         final income = ref.watch(incomeNOtifierProvider);
