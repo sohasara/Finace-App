@@ -1,3 +1,4 @@
+import 'package:finance_app/ui/income_page/details.dart';
 import 'package:flutter/material.dart';
 
 class DetailesIncome extends StatelessWidget {
@@ -31,8 +32,8 @@ class DetailesIncome extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
+            Details(text1: 'Amount:', text2: amount),
             Text(des!),
-            Text(amount),
             Text(cat),
             Text(time),
           ],
