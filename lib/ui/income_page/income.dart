@@ -16,6 +16,7 @@ class IncomePage extends StatelessWidget {
       appBar: AppBar(
         actions: [
           IconButton(
+            tooltip: 'ADD INCOME',
             onPressed: () {
               Navigator.push(
                 context,
