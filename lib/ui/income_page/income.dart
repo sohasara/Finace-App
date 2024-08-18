@@ -100,6 +100,7 @@ class IncomePage extends StatelessWidget {
                                 amount: income[index].amount.toString(),
                                 des: income[index].discirption,
                                 cat: income[index].category,
+                                time: income[index].time,
                               ),
                             ),
                           );
