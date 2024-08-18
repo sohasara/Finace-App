@@ -16,14 +16,27 @@ class DetailesIncome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Column(
-        children: [
-          Text(des!),
-          Text(amount),
-          Text(cat),
-          Text(time),
-        ],
+      appBar: AppBar(
+        title: const Text(
+          'Detailes Page',
+          style: TextStyle(
+            color: Colors.green,
+            fontWeight: FontWeight.w700,
+            fontSize: 25,
+          ),
+        ),
+        centerTitle: true,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Text(des!),
+            Text(amount),
+            Text(cat),
+            Text(time),
+          ],
+        ),
       ),
     );
   }
