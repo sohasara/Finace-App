@@ -21,24 +21,23 @@ class DetailesIncome extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Colors.pink[200]!,
-              Colors.green[200]!,
-              //Colors.blue[200]!,
+              Colors.green[300]!,
+              Colors.green[100]!,
+              Colors.white,
             ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+            begin: Alignment.topRight,
+            end: Alignment.bottomCenter,
           ),
         ),
         child: Column(
           children: [
             AppBar(
               backgroundColor: Colors.transparent,
-              elevation: 0,
-              title: Text(
+              title: const Text(
                 'Detailes Page',
                 style: TextStyle(
-                  color: Colors.green[700],
-                  fontWeight: FontWeight.w700,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
                   fontSize: 25,
                 ),
               ),
