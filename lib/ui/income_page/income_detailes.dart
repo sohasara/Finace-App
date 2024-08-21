@@ -61,7 +61,10 @@ class DetailesIncome extends StatelessWidget {
                   Details(text1: 'Amount:', text2: '$amount tk'),
                   Details(text1: 'Category:', text2: cat),
                   Details(text1: 'Time:', text2: time),
-                  Details(text1: 'Description:', text2: des!),
+                  SizedBox(
+                    height: 200,
+                    child: Details(text1: 'Description:', text2: des!),
+                  ),
                 ],
               ),
             ),

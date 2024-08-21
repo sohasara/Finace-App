@@ -22,6 +22,7 @@ class Details extends StatelessWidget {
           border: Border.all(width: 0.3),
         ),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Text(
               text1,
