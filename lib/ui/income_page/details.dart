@@ -14,12 +14,12 @@ class Details extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        padding: const EdgeInsets.all(10),
-        height: 70,
+        padding: const EdgeInsets.all(15),
+        height: 65,
         width: 400,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(18),
-          border: Border.all(),
+          border: Border.all(width: 0.4),
         ),
         child: Row(
           //mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -27,14 +27,17 @@ class Details extends StatelessWidget {
             Text(
               text1,
               style: const TextStyle(
-                fontSize: 25,
+                fontSize: 22,
                 fontWeight: FontWeight.bold,
               ),
+            ),
+            const SizedBox(
+              width: 17,
             ),
             Text(
               text2,
               style: const TextStyle(
-                fontSize: 25,
+                fontSize: 20,
               ),
             ),
           ],
