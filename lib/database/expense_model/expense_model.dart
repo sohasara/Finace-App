@@ -12,9 +12,12 @@ class ExpenseModel extends HiveObject {
   final String category;
   @HiveField(2)
   final String time;
+  @HiveField(3)
+  final String description;
   ExpenseModel({
     required this.amount,
     required this.category,
     required this.time,
+    required this.description,
   });
 }
