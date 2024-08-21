@@ -22,8 +22,8 @@ class DetailesIncome extends StatelessWidget {
           gradient: LinearGradient(
             colors: [
               Colors.green[300]!,
-              Colors.green[100]!,
               Colors.white,
+              Colors.green[200]!,
             ],
             begin: Alignment.topRight,
             end: Alignment.bottomCenter,
@@ -32,6 +32,14 @@ class DetailesIncome extends StatelessWidget {
         child: Column(
           children: [
             AppBar(
+              actions: [
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.edit,
+                  ),
+                )
+              ],
               backgroundColor: Colors.transparent,
               title: const Text(
                 'Detailes Page',

@@ -19,7 +19,7 @@ class Details extends StatelessWidget {
         width: 400,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(18),
-          border: Border.all(width: 0.4),
+          border: Border.all(width: 0.3),
         ),
         child: Row(
           children: [
