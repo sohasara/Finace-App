@@ -43,10 +43,11 @@ class AddExpense extends ConsumerWidget {
             const SizedBox(
               height: 20,
             ),
-            const Text(
+            Text(
               'Enter the Amount : ',
               style: TextStyle(
                 fontSize: 23,
+                color: Colors.red[900],
               ),
             ),
             TextField(
@@ -62,10 +63,11 @@ class AddExpense extends ConsumerWidget {
             const SizedBox(
               height: 20,
             ),
-            const Text(
+            Text(
               'Enter the Catergory : ',
               style: TextStyle(
                 fontSize: 23,
+                color: Colors.red[900],
               ),
             ),
             TextField(
@@ -78,12 +80,27 @@ class AddExpense extends ConsumerWidget {
                 ),
               ),
             ),
-            TextField(
-              controller: desControler,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(18),
+            const SizedBox(
+              height: 20,
+            ),
+            Text(
+              ' Discription (Optional) : ',
+              style: TextStyle(
+                fontSize: 23,
+                color: Colors.red[900],
+              ),
+            ),
+            SizedBox(
+              height: 150,
+              child: TextField(
+                controller: desControler,
+                textAlign: TextAlign.start,
+                textAlignVertical: TextAlignVertical.top,
+                expands: true,
+                maxLines: null,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(18),
                   ),
                 ),
               ),
