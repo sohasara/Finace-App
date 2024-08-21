@@ -21,9 +21,10 @@ class DetailesExpense extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Colors.green[300]!,
+              Colors.red[300]!,
+              // Colors.white,
               Colors.white,
-              Colors.green[200]!,
+              Colors.red[200]!,
             ],
             begin: Alignment.topRight,
             end: Alignment.bottomCenter,

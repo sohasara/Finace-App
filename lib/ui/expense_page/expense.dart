@@ -1,4 +1,5 @@
 import 'package:finance_app/state/expense_state/expense_provider.dart';
+import 'package:finance_app/ui/expense_page/expense_detailes.dart';
 import 'package:finance_app/ui/expense_page/total_expense.dart';
 import 'package:finance_app/ui/expense_page/view_expense.dart';
 import 'package:finance_app/ui/expense_page/add_expense.dart';
@@ -77,10 +78,25 @@ class Expense extends StatelessWidget {
                           ),
                         ],
                       ),
-                      child: ShowExpense(
-                        amount: expense[index].amount.toString(),
-                        cat: expense[index].category,
-                        date: expense[index].time,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DetailesExpense(
+                                amount: expense[index].amount.toString(),
+                                cat: expense[index].category,
+                                des: expense[index].description,
+                                time: expense[index].time,
+                              ),
+                            ),
+                          );
+                        },
+                        child: ShowExpense(
+                          amount: expense[index].amount.toString(),
+                          cat: expense[index].category,
+                          date: expense[index].time,
+                        ),
                       ),
                     );
                   },
