@@ -30,7 +30,7 @@ class AddExpense extends ConsumerWidget {
         title: Text(
           'ADD YOUR EXPENSE ',
           style: TextStyle(
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w800,
             color: Colors.red[900],
           ),
         ),
@@ -44,10 +44,11 @@ class AddExpense extends ConsumerWidget {
               height: 20,
             ),
             Text(
-              'Enter the Amount : ',
+              ' Amount : ',
               style: TextStyle(
                 fontSize: 23,
-                color: Colors.red[900],
+                color: Colors.red[700],
+                fontWeight: FontWeight.bold,
               ),
             ),
             TextField(
@@ -64,10 +65,11 @@ class AddExpense extends ConsumerWidget {
               height: 20,
             ),
             Text(
-              'Enter the Catergory : ',
+              ' Catergory : ',
               style: TextStyle(
                 fontSize: 23,
-                color: Colors.red[900],
+                color: Colors.red[700],
+                fontWeight: FontWeight.bold,
               ),
             ),
             TextField(
@@ -87,7 +89,8 @@ class AddExpense extends ConsumerWidget {
               ' Discription (Optional) : ',
               style: TextStyle(
                 fontSize: 23,
-                color: Colors.red[900],
+                color: Colors.red[700],
+                fontWeight: FontWeight.bold,
               ),
             ),
             SizedBox(
