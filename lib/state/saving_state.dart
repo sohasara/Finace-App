@@ -14,14 +14,3 @@ final savingsProvider = FutureProvider<double>((ref) async {
 
   return totalIncome - totalExpenses;
 });
-
-final savingsHistoryProvider =
-    FutureProvider<List<Map<String, dynamic>>>((ref) async {
-  final historyBox = await Hive.openBox('savingsHistoryBox');
-  return historyBox.values
-      .map((e) => {
-            'month': e['month'] as String,
-            'amount': e['amount'] as double,
-          })
-      .toList();
-});

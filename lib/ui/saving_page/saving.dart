@@ -1,5 +1,5 @@
 import 'package:finance_app/state/saving_state.dart';
-import 'package:finance_app/ui/saving_page/saving_history.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -9,7 +9,6 @@ class Savings extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final savingValue = ref.watch(savingsProvider);
-    final savingsHistory = ref.watch(savingsHistoryProvider);
 
     return Scaffold(
       drawer: const Drawer(),
@@ -79,29 +78,6 @@ class Savings extends ConsumerWidget {
               ),
             ),
             const SizedBox(height: 10),
-            const Text(
-              'HISTORY',
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.w900,
-              ),
-            ),
-            Expanded(
-              child: savingsHistory.when(
-                data: (historyList) => ListView.builder(
-                  itemCount: historyList.length,
-                  itemBuilder: (context, index) {
-                    final historyItem = historyList[index];
-                    return HistorySaaving(
-                      month: historyItem['month'],
-                      savedAmount: historyItem['amount'],
-                    );
-                  },
-                ),
-                loading: () => const Center(child: CircularProgressIndicator()),
-                error: (err, stack) => Text('Error: $err'),
-              ),
-            ),
           ],
         ),
       ),
