@@ -56,7 +56,7 @@ class TotalExpensePage extends ConsumerWidget {
                 totalExpense.toString(),
                 style: const TextStyle(
                   fontSize: 40,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w900,
                 ),
               )
             ],
