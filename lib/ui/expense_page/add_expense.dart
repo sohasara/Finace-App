@@ -14,6 +14,7 @@ class AddExpense extends ConsumerWidget {
     String formatedDate = DateFormat('dd-MM-yyyy').format(date);
     TextEditingController amountControler = TextEditingController();
     TextEditingController categoryControler = TextEditingController();
+    TextEditingController desControler = TextEditingController();
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -77,6 +78,16 @@ class AddExpense extends ConsumerWidget {
                 ),
               ),
             ),
+            TextField(
+              controller: desControler,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(18),
+                  ),
+                ),
+              ),
+            ),
             const SizedBox(
               height: 25,
             ),
@@ -87,9 +98,12 @@ class AddExpense extends ConsumerWidget {
                 if (amountStr != '' && cat != '') {
                   double amount = double.parse(amountStr);
 
-                  ref
-                      .read(expenseNotifierProvider.notifier)
-                      .addExpense(amount, cat, formatedDate);
+                  ref.read(expenseNotifierProvider.notifier).addExpense(
+                        amount,
+                        cat,
+                        formatedDate,
+                        desControler.text,
+                      );
 
                   Navigator.pop(context);
                 }

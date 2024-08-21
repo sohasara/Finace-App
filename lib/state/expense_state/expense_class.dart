@@ -18,11 +18,15 @@ class ExpenseNotifier extends StateNotifier<List<ExpenseModel>> {
     }
   }
 
-  void addExpense(double amount, String category, String time) {
+  void addExpense(double amount, String category, String time, String des) {
     if (_box == null) return;
 
-    final expense =
-        ExpenseModel(amount: amount, category: category, time: time);
+    final expense = ExpenseModel(
+      amount: amount,
+      category: category,
+      time: time,
+      description: des,
+    );
     _box.add(expense);
     state = [...state, expense];
   }
