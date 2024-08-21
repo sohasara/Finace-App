@@ -38,7 +38,7 @@ class DetailesIncome extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
-                  fontSize: 25,
+                  fontSize: 30,
                 ),
               ),
               centerTitle: true,
@@ -47,6 +47,9 @@ class DetailesIncome extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
+                  const SizedBox(
+                    height: 20,
+                  ),
                   Details(text1: 'Amount:', text2: '$amount tk'),
                   Details(text1: 'Category:', text2: cat),
                   Details(text1: 'Time:', text2: time),
