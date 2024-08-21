@@ -46,3 +46,43 @@ class Details extends StatelessWidget {
     );
   }
 }
+
+class DescriptionP extends StatelessWidget {
+  final String text1;
+  final String text2;
+  const DescriptionP({super.key, required this.text1, required this.text2});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200,
+      width: 400,
+      padding: const EdgeInsets.all(15),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(18),
+        border: Border.all(width: 0.3),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            text1,
+            style: const TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(
+            width: 17,
+          ),
+          Text(
+            text2,
+            style: const TextStyle(
+              fontSize: 20,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
