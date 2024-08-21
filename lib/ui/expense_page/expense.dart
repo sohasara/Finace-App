@@ -34,7 +34,7 @@ class Expense extends StatelessWidget {
           'EXPENSES',
           style: TextStyle(
             fontSize: 28,
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w900,
             color: Colors.red,
           ),
         ),
