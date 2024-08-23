@@ -1,4 +1,4 @@
-import 'package:finance_app/state/saving_state.dart';
+//import 'package:finance_app/state/saving_state.dart';
 import 'package:finance_app/ui/graphs/add_graph.dart';
 
 import 'package:flutter/material.dart';
@@ -9,7 +9,7 @@ class Savings extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final savingValue = ref.watch(savingsProvider);
+    //final savingValue = ref.watch(savingsProvider);
 
     return Scaffold(
       drawer: const Drawer(),
@@ -33,7 +33,7 @@ class Savings extends ConsumerWidget {
           ),
         ),
       ),
-      body: AddGraph(),
+      body: const AddGraph(),
       // body: Padding(
       //   padding: const EdgeInsets.all(10.0),
       //   child: SingleChildScrollView(
