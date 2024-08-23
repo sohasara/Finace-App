@@ -3,6 +3,8 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../state/income_state.dart/income_provider.dart';
+
 class AddGraph extends ConsumerWidget {
   const AddGraph({super.key});
 
@@ -11,6 +13,10 @@ class AddGraph extends ConsumerWidget {
     final totalExpense = ref.watch(expenseNotifierProvider).fold<double>(
           0.0,
           (sum, expense) => sum + expense.amount,
+        );
+    final totalIncome = ref.watch(incomeNOtifierProvider).fold<double>(
+          0.0,
+          (sum, income) => sum + income.amount,
         );
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -23,14 +29,14 @@ class AddGraph extends ConsumerWidget {
               PieChartData(
                 sections: [
                   PieChartSectionData(
-                    value: totalExpense,
+                    value: totalIncome,
                     title: 'Income',
                     showTitle: true,
                     radius: 70,
                     color: Colors.green,
                   ),
                   PieChartSectionData(
-                    value: 60,
+                    value: totalExpense,
                     title: 'Expense',
                     showTitle: true,
                     radius: 70,
