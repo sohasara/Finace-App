@@ -1,11 +1,17 @@
+import 'package:finance_app/state/expense_state/expense_provider.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class AddGraph extends StatelessWidget {
+class AddGraph extends ConsumerWidget {
   const AddGraph({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final totalExpense = ref.watch(expenseNotifierProvider).fold<double>(
+          0.0,
+          (sum, expense) => sum + expense.amount,
+        );
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
@@ -17,7 +23,7 @@ class AddGraph extends StatelessWidget {
               PieChartData(
                 sections: [
                   PieChartSectionData(
-                    value: 30,
+                    value: totalExpense,
                     title: 'Income',
                     showTitle: true,
                     radius: 70,
