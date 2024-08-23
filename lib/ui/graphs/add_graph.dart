@@ -25,6 +25,7 @@ class AddGraph extends ConsumerWidget {
       child: Column(
         children: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               SizedBox(
                 height: 200,
@@ -59,8 +60,8 @@ class AddGraph extends ConsumerWidget {
               ),
               Container(
                 padding: const EdgeInsets.all(10),
-                height: 200,
-                width: 200,
+                height: 180,
+                width: 180,
                 decoration: BoxDecoration(
                   color: Colors.purple[100],
                 ),
