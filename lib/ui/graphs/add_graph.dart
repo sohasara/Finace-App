@@ -24,36 +24,41 @@ class AddGraph extends ConsumerWidget {
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
-          SizedBox(
-            height: 200,
-            width: 200,
-            child: PieChart(
-              PieChartData(
-                sections: [
-                  PieChartSectionData(
-                    value: totalIncome,
-                    title: 'Income',
-                    showTitle: true,
-                    radius: 70,
-                    color: Colors.green,
+          Row(
+            children: [
+              SizedBox(
+                height: 200,
+                width: 200,
+                child: PieChart(
+                  PieChartData(
+                    sections: [
+                      PieChartSectionData(
+                        value: totalIncome,
+                        title: 'Income',
+                        showTitle: true,
+                        radius: 70,
+                        color: Colors.green,
+                      ),
+                      PieChartSectionData(
+                        value: totalExpense,
+                        title: 'Expense',
+                        showTitle: true,
+                        radius: 70,
+                        color: Colors.red,
+                      ),
+                      PieChartSectionData(
+                        value: saving,
+                        title: 'saving',
+                        showTitle: true,
+                        radius: 70,
+                        color: Colors.purple,
+                      ),
+                    ],
                   ),
-                  PieChartSectionData(
-                    value: totalExpense,
-                    title: 'Expense',
-                    showTitle: true,
-                    radius: 70,
-                    color: Colors.red,
-                  ),
-                  PieChartSectionData(
-                    value: saving,
-                    title: 'saving',
-                    showTitle: true,
-                    radius: 70,
-                    color: Colors.purple,
-                  ),
-                ],
+                ),
               ),
-            ),
+              Text('saved amount $saving'),
+            ],
           ),
         ],
       ),
