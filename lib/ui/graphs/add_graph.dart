@@ -18,6 +18,8 @@ class AddGraph extends ConsumerWidget {
           0.0,
           (sum, income) => sum + income.amount,
         );
+
+    final saving = totalIncome - totalExpense;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
@@ -43,7 +45,7 @@ class AddGraph extends ConsumerWidget {
                     color: Colors.red,
                   ),
                   PieChartSectionData(
-                    value: 10,
+                    value: saving,
                     title: 'saving',
                     showTitle: true,
                     radius: 70,
