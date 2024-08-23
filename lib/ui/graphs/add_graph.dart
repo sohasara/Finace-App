@@ -6,29 +6,40 @@ class AddGraph extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PieChart(
-      PieChartData(
-        sections: [
-          PieChartSectionData(
-            value: 30,
-            title: 'Income',
-            showTitle: true,
-            radius: 90,
-            color: Colors.green,
-          ),
-          PieChartSectionData(
-            value: 60,
-            title: 'Expense',
-            showTitle: true,
-            radius: 100,
-            color: Colors.red,
-          ),
-          PieChartSectionData(
-            value: 10,
-            title: 'saving',
-            showTitle: true,
-            radius: 85,
-            color: Colors.purple,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 200,
+            width: 200,
+            child: PieChart(
+              PieChartData(
+                sections: [
+                  PieChartSectionData(
+                    value: 30,
+                    title: 'Income',
+                    showTitle: true,
+                    radius: 70,
+                    color: Colors.green,
+                  ),
+                  PieChartSectionData(
+                    value: 60,
+                    title: 'Expense',
+                    showTitle: true,
+                    radius: 70,
+                    color: Colors.red,
+                  ),
+                  PieChartSectionData(
+                    value: 10,
+                    title: 'saving',
+                    showTitle: true,
+                    radius: 70,
+                    color: Colors.purple,
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       ),

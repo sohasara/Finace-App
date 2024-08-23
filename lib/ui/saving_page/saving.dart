@@ -33,7 +33,7 @@ class Savings extends ConsumerWidget {
           ),
         ),
       ),
-      body: const AddGraph(),
+      body: AddGraph(),
       // body: Padding(
       //   padding: const EdgeInsets.all(10.0),
       //   child: SingleChildScrollView(
