@@ -57,7 +57,15 @@ class AddGraph extends ConsumerWidget {
                   ),
                 ),
               ),
-              Text('saved amount $saving'),
+              Container(
+                padding: const EdgeInsets.all(10),
+                height: 200,
+                width: 200,
+                decoration: BoxDecoration(
+                  color: Colors.purple[100],
+                ),
+                child: Text('saved amount: $saving'),
+              ),
             ],
           ),
         ],
