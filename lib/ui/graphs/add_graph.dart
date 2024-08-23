@@ -64,8 +64,14 @@ class AddGraph extends ConsumerWidget {
                 width: 180,
                 decoration: BoxDecoration(
                   color: Colors.purple[100],
+                  borderRadius: BorderRadius.circular(18),
                 ),
-                child: Text('saved amount: $saving'),
+                child: Column(
+                  children: [
+                    const Text('saved amount'),
+                    Text(saving.toString()),
+                  ],
+                ),
               ),
             ],
           ),
