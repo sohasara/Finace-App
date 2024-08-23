@@ -68,6 +68,9 @@ class AddGraph extends ConsumerWidget {
                 ),
                 child: Column(
                   children: [
+                    const SizedBox(
+                      height: 40,
+                    ),
                     const Text('saved amount'),
                     Text(saving.toString()),
                   ],
