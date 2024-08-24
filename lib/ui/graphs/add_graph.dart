@@ -30,14 +30,6 @@ class AddGraph extends ConsumerWidget {
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            // const Text(
-            //   'Total Savings Amonut ',
-            //   style: TextStyle(
-            //     fontSize: 23,
-            //     fontWeight: FontWeight.bold,
-            //   ),
-            // ),
-
             Container(
               height: 200,
               width: 400,
@@ -124,49 +116,6 @@ class AddGraph extends ConsumerWidget {
                 ),
               ),
             ),
-            // const SizedBox(
-            //   height: 15,
-            // ),
-            // const Text(
-            //   'Total Savings Amonut ',
-            //   style: TextStyle(
-            //     fontSize: 23,
-            //     fontWeight: FontWeight.bold,
-            //   ),
-            // ),
-            // const SizedBox(
-            //   height: 10,
-            // ),
-            // Container(
-            //   height: 150,
-            //   width: 400,
-            //   decoration: BoxDecoration(
-            //     color: Colors.purple[200],
-            //     borderRadius: BorderRadius.circular(18),
-            //   ),
-            //   child: Row(
-            //     //  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            //     children: [
-            //       const SizedBox(
-            //         width: 50,
-            //       ),
-            //       const Text(
-            //         'Saved Amonut : ',
-            //         style: TextStyle(
-            //           fontSize: 25,
-            //           fontWeight: FontWeight.bold,
-            //         ),
-            //       ),
-            //       Text(
-            //         '$saving tk',
-            //         style: const TextStyle(
-            //           fontSize: 25,
-            //           fontWeight: FontWeight.bold,
-            //         ),
-            //       ),
-            //     ],
-            //   ),
-            // ),
           ],
         ),
       ),
