@@ -24,6 +24,7 @@ class AddGraph extends ConsumerWidget {
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
+          const Text(''),
           SizedBox(
             height: 200,
             width: 200,
