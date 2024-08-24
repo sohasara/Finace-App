@@ -79,6 +79,7 @@ class AddGraph extends ConsumerWidget {
                 ),
               ),
             ),
+            Container(),
           ],
         ),
       ),
