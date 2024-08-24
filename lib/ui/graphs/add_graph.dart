@@ -23,7 +23,7 @@ class AddGraph extends ConsumerWidget {
     return Padding(
       padding: const EdgeInsets.all(15.0),
       child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
+        scrollDirection: Axis.vertical,
         child: Column(
           children: [
             const Text(
@@ -89,7 +89,24 @@ class AddGraph extends ConsumerWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            Container(),
+            Container(
+              height: 150,
+              width: 400,
+              decoration: BoxDecoration(
+                color: Colors.purple[200],
+                borderRadius: BorderRadius.circular(18),
+              ),
+              child: Row(
+                children: [
+                  const Text(
+                    'Saved Amonut : ',
+                  ),
+                  Text(
+                    saving.toString(),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
