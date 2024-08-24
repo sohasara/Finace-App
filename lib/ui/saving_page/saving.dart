@@ -1,4 +1,3 @@
-//import 'package:finance_app/state/saving_state.dart';
 import 'package:finance_app/ui/graphs/add_graph.dart';
 
 import 'package:flutter/material.dart';
@@ -34,59 +33,6 @@ class Savings extends ConsumerWidget {
         ),
       ),
       body: const AddGraph(),
-      // body: Padding(
-      //   padding: const EdgeInsets.all(10.0),
-      //   child: SingleChildScrollView(
-      //     scrollDirection: Axis.horizontal,
-      //     child: Column(
-      //       children: [
-
-      //         Padding(
-      //           padding: const EdgeInsets.only(left: 10.0, top: 10),
-      //           child: Container(
-      //             padding: const EdgeInsets.all(8),
-      //             height: 220,
-      //             width: 400,
-      //             decoration: BoxDecoration(
-      //               color: Colors.purple[200],
-      //               borderRadius: BorderRadius.circular(20),
-      //             ),
-      //             child: savingValue.when(
-      //               data: (savings) => Column(
-      //                 children: [
-      //                   const SizedBox(height: 40),
-      //                   const Text(
-      //                     'Total Saved Money',
-      //                     style: TextStyle(
-      //                       fontSize: 33,
-      //                       fontWeight: FontWeight.bold,
-      //                       color: Colors.white,
-      //                     ),
-      //                   ),
-      //                   const SizedBox(height: 10),
-      //                   Text(
-      //                     savings.toStringAsFixed(1),
-      //                     style: const TextStyle(
-      //                       fontSize: 40,
-      //                       fontWeight: FontWeight.bold,
-      //                     ),
-      //                   ),
-      //                 ],
-      //               ),
-      //               loading: () {
-      //                 return const Center(child: CircularProgressIndicator());
-      //               },
-      //               error: (err, stack) {
-      //                 return Text('Error: $err');
-      //               },
-      //             ),
-      //           ),
-      //         ),
-      //         const SizedBox(height: 10),
-      //       ],
-      //     ),
-      //   ),
-      // ),
     );
   }
 }

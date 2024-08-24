@@ -89,6 +89,9 @@ class AddGraph extends ConsumerWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
+            const SizedBox(
+              height: 10,
+            ),
             Container(
               height: 150,
               width: 400,
