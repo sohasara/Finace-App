@@ -21,7 +21,7 @@ class AddGraph extends ConsumerWidget {
 
     final saving = totalIncome - totalExpense;
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(15.0),
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Column(
@@ -32,6 +32,9 @@ class AddGraph extends ConsumerWidget {
                 fontSize: 23,
                 fontWeight: FontWeight.bold,
               ),
+            ),
+            const SizedBox(
+              height: 15,
             ),
             SizedBox(
               height: 300,
