@@ -21,53 +21,55 @@ class AddGraph extends ConsumerWidget {
 
     final saving = totalIncome - totalExpense;
     return Padding(
-      padding: const EdgeInsets.all(15.0),
+      padding: const EdgeInsets.only(
+        top: 10.0,
+        left: 20,
+        right: 20,
+      ),
       child: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            const SizedBox(
-              height: 15,
-            ),
-            const Text(
-              'Total Savings Amonut ',
-              style: TextStyle(
-                fontSize: 23,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
+            // const Text(
+            //   'Total Savings Amonut ',
+            //   style: TextStyle(
+            //     fontSize: 23,
+            //     fontWeight: FontWeight.bold,
+            //   ),
+            // ),
+
             Container(
-              height: 150,
+              height: 200,
               width: 400,
               decoration: BoxDecoration(
                 color: Colors.purple[200],
                 borderRadius: BorderRadius.circular(18),
               ),
-              child: Row(
-                //  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              child: Column(
                 children: [
                   const SizedBox(
-                    width: 50,
+                    height: 35,
                   ),
                   const Text(
-                    'Saved Amonut : ',
+                    'Saved Amonut  ',
                     style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
                     ),
                   ),
                   Text(
                     '$saving tk',
                     style: const TextStyle(
-                      fontSize: 25,
+                      fontSize: 35,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ],
               ),
+            ),
+            const SizedBox(
+              height: 15,
             ),
             const Text(
               'Graphical Repesentation',
@@ -77,7 +79,7 @@ class AddGraph extends ConsumerWidget {
               ),
             ),
             const SizedBox(
-              height: 15,
+              height: 10,
             ),
             SizedBox(
               height: 300,
