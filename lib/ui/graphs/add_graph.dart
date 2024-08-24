@@ -79,6 +79,16 @@ class AddGraph extends ConsumerWidget {
                 ),
               ),
             ),
+            const SizedBox(
+              height: 15,
+            ),
+            const Text(
+              'Total Savings Amonut ',
+              style: TextStyle(
+                fontSize: 23,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             Container(),
           ],
         ),
