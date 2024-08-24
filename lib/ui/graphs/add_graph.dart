@@ -97,12 +97,24 @@ class AddGraph extends ConsumerWidget {
                 borderRadius: BorderRadius.circular(18),
               ),
               child: Row(
+                //  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
+                  const SizedBox(
+                    width: 50,
+                  ),
                   const Text(
                     'Saved Amonut : ',
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   Text(
-                    saving.toString(),
+                    '$saving tk',
+                    style: const TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
