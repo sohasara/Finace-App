@@ -1,15 +1,12 @@
 import 'package:finance_app/ui/graphs/add_graph.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class Savings extends ConsumerWidget {
+class Savings extends StatelessWidget {
   const Savings({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    //final savingValue = ref.watch(savingsProvider);
-
+  Widget build(BuildContext context) {
     return Scaffold(
       drawer: const Drawer(),
       appBar: AppBar(
