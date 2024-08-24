@@ -24,59 +24,36 @@ class AddGraph extends ConsumerWidget {
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              SizedBox(
-                height: 200,
-                width: 200,
-                child: PieChart(
-                  PieChartData(
-                    sections: [
-                      PieChartSectionData(
-                        value: totalIncome,
-                        title: 'Income',
-                        showTitle: true,
-                        radius: 70,
-                        color: Colors.green,
-                      ),
-                      PieChartSectionData(
-                        value: totalExpense,
-                        title: 'Expense',
-                        showTitle: true,
-                        radius: 70,
-                        color: Colors.red,
-                      ),
-                      PieChartSectionData(
-                        value: saving,
-                        title: 'saving',
-                        showTitle: true,
-                        radius: 70,
-                        color: Colors.purple,
-                      ),
-                    ],
+          SizedBox(
+            height: 200,
+            width: 200,
+            child: PieChart(
+              PieChartData(
+                sections: [
+                  PieChartSectionData(
+                    value: totalIncome,
+                    title: 'Income',
+                    showTitle: true,
+                    radius: 70,
+                    color: Colors.green,
                   ),
-                ),
+                  PieChartSectionData(
+                    value: totalExpense,
+                    title: 'Expense',
+                    showTitle: true,
+                    radius: 70,
+                    color: Colors.red,
+                  ),
+                  PieChartSectionData(
+                    value: saving,
+                    title: 'saving',
+                    showTitle: true,
+                    radius: 70,
+                    color: Colors.purple,
+                  ),
+                ],
               ),
-              Container(
-                padding: const EdgeInsets.all(10),
-                height: 180,
-                width: 180,
-                decoration: BoxDecoration(
-                  color: Colors.purple[100],
-                  borderRadius: BorderRadius.circular(18),
-                ),
-                child: Column(
-                  children: [
-                    const SizedBox(
-                      height: 40,
-                    ),
-                    const Text('saved amount'),
-                    Text(saving.toString()),
-                  ],
-                ),
-              ),
-            ],
+            ),
           ),
         ],
       ),
