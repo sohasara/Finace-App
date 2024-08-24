@@ -22,41 +22,50 @@ class AddGraph extends ConsumerWidget {
     final saving = totalIncome - totalExpense;
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Column(
-        children: [
-          const Text(''),
-          SizedBox(
-            height: 200,
-            width: 200,
-            child: PieChart(
-              PieChartData(
-                sections: [
-                  PieChartSectionData(
-                    value: totalIncome,
-                    title: 'Income',
-                    showTitle: true,
-                    radius: 70,
-                    color: Colors.green,
-                  ),
-                  PieChartSectionData(
-                    value: totalExpense,
-                    title: 'Expense',
-                    showTitle: true,
-                    radius: 70,
-                    color: Colors.red,
-                  ),
-                  PieChartSectionData(
-                    value: saving,
-                    title: 'saving',
-                    showTitle: true,
-                    radius: 70,
-                    color: Colors.purple,
-                  ),
-                ],
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Column(
+          children: [
+            const Text(
+              'Graphical Repesentation',
+              style: TextStyle(
+                fontSize: 23,
+                fontWeight: FontWeight.bold,
               ),
             ),
-          ),
-        ],
+            SizedBox(
+              height: 300,
+              width: 400,
+              child: PieChart(
+                PieChartData(
+                  sections: [
+                    PieChartSectionData(
+                      value: totalIncome,
+                      title: 'Income',
+                      showTitle: true,
+                      radius: 70,
+                      color: Colors.green,
+                    ),
+                    PieChartSectionData(
+                      value: totalExpense,
+                      title: 'Expense',
+                      showTitle: true,
+                      radius: 70,
+                      color: Colors.red,
+                    ),
+                    PieChartSectionData(
+                      value: saving,
+                      title: 'saving',
+                      showTitle: true,
+                      radius: 70,
+                      color: Colors.purple,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
