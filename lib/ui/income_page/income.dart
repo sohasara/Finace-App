@@ -83,9 +83,12 @@ class IncomePage extends StatelessWidget {
                           ),
                           SlidableAction(
                             onPressed: (context) {
-                              ref
-                                  .read(incomeNOtifierProvider.notifier)
-                                  .removeIncome(index);
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const AddIncome(),
+                                ),
+                              );
                             },
                             borderRadius: const BorderRadius.only(
                               topRight: Radius.circular(18),
