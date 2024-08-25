@@ -75,7 +75,10 @@ class Expense extends StatelessWidget {
                             foregroundColor: Colors.white,
                             icon: Icons.delete,
                             label: 'delete',
-                            borderRadius: BorderRadius.circular(18),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(18),
+                              bottomLeft: Radius.circular(18),
+                            ),
                             autoClose: true,
                           ),
                           SlidableAction(
@@ -87,7 +90,10 @@ class Expense extends StatelessWidget {
                             backgroundColor: Colors.blue,
                             foregroundColor: Colors.white,
                             icon: Icons.edit,
-                            borderRadius: BorderRadius.circular(18),
+                            borderRadius: const BorderRadius.only(
+                              topRight: Radius.circular(18),
+                              bottomRight: Radius.circular(18),
+                            ),
                             label: 'edit',
                             autoClose: true,
                           ),
