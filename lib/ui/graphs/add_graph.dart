@@ -50,6 +50,9 @@ class AddGraph extends ConsumerWidget {
                       color: Colors.white,
                     ),
                   ),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   Text(
                     '$saving tk',
                     style: const TextStyle(
