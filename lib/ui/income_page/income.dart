@@ -72,10 +72,29 @@ class IncomePage extends StatelessWidget {
                                   .read(incomeNOtifierProvider.notifier)
                                   .removeIncome(index);
                             },
-                            borderRadius: BorderRadius.circular(18),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(18),
+                              bottomLeft: Radius.circular(18),
+                            ),
                             backgroundColor: Colors.red,
                             foregroundColor: Colors.white,
                             icon: Icons.delete,
+                            autoClose: true,
+                          ),
+                          SlidableAction(
+                            onPressed: (context) {
+                              ref
+                                  .read(incomeNOtifierProvider.notifier)
+                                  .removeIncome(index);
+                            },
+                            borderRadius: const BorderRadius.only(
+                              topRight: Radius.circular(18),
+                              bottomRight: Radius.circular(18),
+                            ),
+                            backgroundColor: Colors.blue,
+                            foregroundColor: Colors.white,
+                            icon: Icons.edit,
+                            autoClose: true,
                           ),
                         ],
                       ),
