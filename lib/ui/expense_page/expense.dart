@@ -74,7 +74,22 @@ class Expense extends StatelessWidget {
                             backgroundColor: Colors.red,
                             foregroundColor: Colors.white,
                             icon: Icons.delete,
+                            label: 'delete',
                             borderRadius: BorderRadius.circular(18),
+                            autoClose: true,
+                          ),
+                          SlidableAction(
+                            onPressed: (context) {
+                              ref
+                                  .read(expenseNotifierProvider.notifier)
+                                  .removeExpense(index);
+                            },
+                            backgroundColor: Colors.blue,
+                            foregroundColor: Colors.white,
+                            icon: Icons.edit,
+                            borderRadius: BorderRadius.circular(18),
+                            label: 'edit',
+                            autoClose: true,
                           ),
                         ],
                       ),
