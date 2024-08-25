@@ -15,20 +15,25 @@ class AddExpense extends ConsumerWidget {
   final String? description;
   const AddExpense({
     super.key,
-    required this.category,
-    required this.amount,
-    required this.index,
-    required this.time,
-    required this.description,
+    this.category,
+    this.amount,
+    this.index,
+    this.time,
+    this.description,
   });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final DateTime date = DateTime.now();
     String formatedDate = DateFormat('dd-MM-yyyy').format(date);
-    TextEditingController amountControler = TextEditingController();
-    TextEditingController categoryControler = TextEditingController();
-    TextEditingController desControler = TextEditingController();
+    TextEditingController amountControler = TextEditingController(
+      text: amount?.toString(),
+    );
+    TextEditingController categoryControler =
+        TextEditingController(text: category);
+    TextEditingController desControler = TextEditingController(
+      text: description,
+    );
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -129,18 +134,24 @@ class AddExpense extends ConsumerWidget {
               onTap: () {
                 String amountStr = amountControler.text;
                 String cat = categoryControler.text;
-                if (amountStr != '' && cat != '') {
-                  double amount = double.parse(amountStr);
-
+                double amount = double.parse(amountStr);
+                if (index != null) {
+                  ref.read(expenseNotifierProvider.notifier).updateExpense(
+                        amount,
+                        cat,
+                        formatedDate,
+                        desControler.text,
+                        index!,
+                      );
+                } else if (amountStr != '' && cat != '') {
                   ref.read(expenseNotifierProvider.notifier).addExpense(
                         amount,
                         cat,
                         formatedDate,
                         desControler.text,
                       );
-
-                  Navigator.pop(context);
                 }
+                Navigator.pop(context);
               },
               child: Center(
                 child: Container(
