@@ -4,8 +4,19 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
 class AddIncome extends ConsumerWidget {
+  final String? cat;
+  final String? des;
+  final int? index;
+  final double? amount;
+  final String? time;
+
   const AddIncome({
     super.key,
+    required this.amount,
+    required this.cat,
+    required this.des,
+    required this.index,
+    required this.time,
   });
 
   @override

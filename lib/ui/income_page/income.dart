@@ -22,7 +22,13 @@ class IncomePage extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const AddIncome(),
+                  builder: (context) => const AddIncome(
+                    amount: null,
+                    cat: '',
+                    index: null,
+                    des: '',
+                    time: '',
+                  ),
                 ),
               );
             },
@@ -86,7 +92,13 @@ class IncomePage extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const AddIncome(),
+                                  builder: (context) => AddIncome(
+                                    amount: income[index].amount,
+                                    time: income[index].time,
+                                    cat: income[index].category,
+                                    des: income[index].discirption,
+                                    index: index,
+                                  ),
                                 ),
                               );
                             },
