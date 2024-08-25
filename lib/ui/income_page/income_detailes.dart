@@ -35,21 +35,6 @@ class DetailesIncome extends StatelessWidget {
         child: Column(
           children: [
             AppBar(
-              actions: [
-                IconButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const AddIncome(),
-                      ),
-                    );
-                  },
-                  icon: const Icon(
-                    Icons.edit,
-                  ),
-                )
-              ],
               backgroundColor: Colors.transparent,
               title: const Text(
                 'Detailes Page',
