@@ -130,13 +130,21 @@ class AddIncome extends ConsumerWidget {
                 final String amount = amountController.text;
                 final String category = categoryController.text;
                 final String dis = discriptionController.text;
-
-                ref.read(incomeNOtifierProvider.notifier).addIncome(
+                if (index != null) {
+                  ref.read(incomeNOtifierProvider.notifier).updateIncome(
                       double.parse(amount),
                       category,
                       formattedDate,
                       dis,
-                    );
+                      index!);
+                } else {
+                  ref.read(incomeNOtifierProvider.notifier).addIncome(
+                        double.parse(amount),
+                        category,
+                        formattedDate,
+                        dis,
+                      );
+                }
                 Navigator.pop(context);
               },
               child: Center(
