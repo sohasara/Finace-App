@@ -1,4 +1,3 @@
-import 'package:finance_app/ui/income_page/add_income.dart';
 import 'package:finance_app/ui/income_page/details.dart';
 import 'package:flutter/material.dart';
 
