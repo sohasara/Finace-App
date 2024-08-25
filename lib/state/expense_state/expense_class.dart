@@ -31,6 +31,20 @@ class ExpenseNotifier extends StateNotifier<List<ExpenseModel>> {
     state = [...state, expense];
   }
 
+  void updateExpense(double amount, String category, String time,
+      String description, int index) {
+    if (_box == null) {
+      return;
+    } else {
+      final updateExp = ExpenseModel(
+          amount: amount,
+          category: category,
+          time: time,
+          description: description);
+      state = List.from(state)..[index] = updateExp;
+    }
+  }
+
   void removeExpense(int index) {
     if (_box == null) return;
 

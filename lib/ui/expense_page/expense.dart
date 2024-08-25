@@ -85,7 +85,13 @@ class Expense extends StatelessWidget {
                             onPressed: (context) {
                               ref
                                   .read(expenseNotifierProvider.notifier)
-                                  .removeExpense(index);
+                                  .updateExpense(
+                                    expense[index].amount,
+                                    expense[index].category,
+                                    expense[index].time,
+                                    expense[index].description,
+                                    index,
+                                  );
                             },
                             backgroundColor: Colors.blue,
                             foregroundColor: Colors.white,
