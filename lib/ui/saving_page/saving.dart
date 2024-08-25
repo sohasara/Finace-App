@@ -8,8 +8,10 @@ class Savings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.purple[50],
       drawer: const Drawer(),
       appBar: AppBar(
+        backgroundColor: Colors.purple[50],
         actions: [
           IconButton(
             onPressed: () {},
