@@ -32,10 +32,10 @@ class IncomeNotifier extends StateNotifier<List<IncomeModel>> {
     if (_box == null) {
       return;
     } else {
-      final income = IncomeModel(
+      final updateincome = IncomeModel(
           amount: amount, category: cat, time: time, discirption: dis);
-      _box.putAt(index, income);
-      state = List.from(state)..[index] = income;
+      _box.putAt(index, updateincome);
+      state = List.from(state)..[index] = updateincome;
     }
   }
 

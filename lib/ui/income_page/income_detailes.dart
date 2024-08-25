@@ -1,18 +1,20 @@
+import 'package:finance_app/ui/income_page/add_income.dart';
 import 'package:finance_app/ui/income_page/details.dart';
 import 'package:flutter/material.dart';
 
 class DetailesIncome extends StatelessWidget {
   final String? des;
+  final int index;
   final String amount;
   final String cat;
   final String time;
-  const DetailesIncome({
-    super.key,
-    required this.amount,
-    required this.cat,
-    required this.des,
-    required this.time,
-  });
+  const DetailesIncome(
+      {super.key,
+      required this.amount,
+      required this.cat,
+      required this.des,
+      required this.time,
+      required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +36,19 @@ class DetailesIncome extends StatelessWidget {
             AppBar(
               actions: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AddIncome(
+                          index: index,
+                          amount: double.parse(amount),
+                          category: cat,
+                          description: des,
+                        ),
+                      ),
+                    );
+                  },
                   icon: const Icon(
                     Icons.edit,
                   ),

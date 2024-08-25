@@ -4,15 +4,31 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
 class AddIncome extends ConsumerWidget {
-  const AddIncome({super.key});
+  final int? index;
+  final double? amount;
+  final String? category;
+  final String? description;
+  const AddIncome({
+    super.key,
+    required this.amount,
+    required this.category,
+    required this.description,
+    required this.index,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final DateTime date = DateTime.now();
     String formattedDate = DateFormat('dd-MM-yyyy').format(date);
-    TextEditingController amountController = TextEditingController();
-    TextEditingController categoryController = TextEditingController();
-    TextEditingController discriptionController = TextEditingController();
+    TextEditingController amountController = TextEditingController(
+      text: amount?.toString(),
+    );
+    TextEditingController categoryController = TextEditingController(
+      text: category,
+    );
+    TextEditingController discriptionController = TextEditingController(
+      text: description,
+    );
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -111,9 +127,20 @@ class AddIncome extends ConsumerWidget {
                 final String amount = amountController.text;
                 final String category = categoryController.text;
                 final String dis = discriptionController.text;
-
-                ref.read(incomeNOtifierProvider.notifier).addIncome(
-                    double.parse(amount), category, formattedDate, dis);
+                if (index != null) {
+                  ref.read(incomeNOtifierProvider.notifier).updateIncome(
+                      double.parse(amount),
+                      category,
+                      dis,
+                      formattedDate,
+                      index!);
+                } else {
+                  ref.read(incomeNOtifierProvider.notifier).addIncome(
+                      double.parse(amount),
+                      category,
+                      formattedDate,
+                      description!);
+                }
                 Navigator.pop(context);
               },
               child: Center(
