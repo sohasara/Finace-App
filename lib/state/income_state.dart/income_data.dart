@@ -27,6 +27,18 @@ class IncomeNotifier extends StateNotifier<List<IncomeModel>> {
     }
   }
 
+  void updateIncome(
+      double amount, String cat, String time, String dis, int index) {
+    if (_box == null) {
+      return;
+    } else {
+      final income = IncomeModel(
+          amount: amount, category: cat, time: time, discirption: dis);
+      _box.putAt(index, income);
+      state = List.from(state)..[index] = income;
+    }
+  }
+
   void removeIncome(int index) {
     _box?.deleteAt(index);
 
