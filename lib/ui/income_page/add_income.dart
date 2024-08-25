@@ -24,7 +24,7 @@ class AddIncome extends ConsumerWidget {
     final DateTime date = DateTime.now();
     String formattedDate = DateFormat('dd-MM-yyyy').format(date);
     TextEditingController amountController = TextEditingController(
-      text: amount.toString(),
+      text: amount?.toString(),
     );
     TextEditingController categoryController = TextEditingController(
       text: cat,
