@@ -16,6 +16,7 @@ class Expense extends StatelessWidget {
       appBar: AppBar(
         actions: [
           IconButton(
+            tooltip: 'ADD EXPENSE',
             onPressed: () {
               Navigator.push(
                 context,
