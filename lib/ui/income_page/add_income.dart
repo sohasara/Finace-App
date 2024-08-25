@@ -23,9 +23,15 @@ class AddIncome extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final DateTime date = DateTime.now();
     String formattedDate = DateFormat('dd-MM-yyyy').format(date);
-    TextEditingController amountController = TextEditingController();
-    TextEditingController categoryController = TextEditingController();
-    TextEditingController discriptionController = TextEditingController();
+    TextEditingController amountController = TextEditingController(
+      text: amount.toString(),
+    );
+    TextEditingController categoryController = TextEditingController(
+      text: cat,
+    );
+    TextEditingController discriptionController = TextEditingController(
+      text: des,
+    );
     return Scaffold(
       appBar: AppBar(
         actions: [
