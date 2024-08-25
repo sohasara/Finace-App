@@ -20,7 +20,13 @@ class Expense extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const AddExpense(),
+                  builder: (context) => const AddExpense(
+                    amount: null,
+                    index: null,
+                    category: '',
+                    description: '',
+                    time: '',
+                  ),
                 ),
               );
             },
@@ -86,7 +92,13 @@ class Expense extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const AddExpense(),
+                                  builder: (context) => AddExpense(
+                                    amount: expense[index].amount,
+                                    time: expense[index].time,
+                                    description: expense[index].description,
+                                    category: expense[index].category,
+                                    index: index,
+                                  ),
                                 ),
                               );
                             },

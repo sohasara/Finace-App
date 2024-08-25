@@ -1,12 +1,26 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 // ignore_for_file: avoid_print
 
-import 'package:finance_app/state/expense_state/expense_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
+import 'package:finance_app/state/expense_state/expense_provider.dart';
+
 class AddExpense extends ConsumerWidget {
-  const AddExpense({super.key});
+  final String? category;
+  final double? amount;
+  final int? index;
+  final String? time;
+  final String? description;
+  const AddExpense({
+    super.key,
+    required this.category,
+    required this.amount,
+    required this.index,
+    required this.time,
+    required this.description,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
