@@ -8,13 +8,14 @@ class DetailesIncome extends StatelessWidget {
   final String amount;
   final String cat;
   final String time;
-  const DetailesIncome(
-      {super.key,
-      required this.amount,
-      required this.cat,
-      required this.des,
-      required this.time,
-      required this.index});
+  const DetailesIncome({
+    super.key,
+    required this.amount,
+    required this.cat,
+    required this.des,
+    required this.time,
+    required this.index,
+  });
 
   @override
   Widget build(BuildContext context) {
