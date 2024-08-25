@@ -13,9 +13,9 @@ class Expense extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red[50],
+      //  backgroundColor: Colors.red[50],
       appBar: AppBar(
-        backgroundColor: Colors.red[50],
+        //  backgroundColor: Colors.red[50],
         actions: [
           IconButton(
             onPressed: () {

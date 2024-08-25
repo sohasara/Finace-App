@@ -14,9 +14,9 @@ class IncomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green[50],
+      // backgroundColor: Colors.green[50],
       appBar: AppBar(
-        backgroundColor: Colors.green[50],
+        //  backgroundColor: Colors.green[50],
         actions: [
           IconButton(
             tooltip: 'ADD INCOME',
