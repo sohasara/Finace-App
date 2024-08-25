@@ -33,14 +33,6 @@ class DetailesExpense extends StatelessWidget {
         child: Column(
           children: [
             AppBar(
-              actions: [
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.edit,
-                  ),
-                )
-              ],
               backgroundColor: Colors.transparent,
               title: const Text(
                 'Detailes Page',
