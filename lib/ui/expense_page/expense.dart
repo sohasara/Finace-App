@@ -83,15 +83,12 @@ class Expense extends StatelessWidget {
                           ),
                           SlidableAction(
                             onPressed: (context) {
-                              ref
-                                  .read(expenseNotifierProvider.notifier)
-                                  .updateExpense(
-                                    expense[index].amount,
-                                    expense[index].category,
-                                    expense[index].time,
-                                    expense[index].description,
-                                    index,
-                                  );
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const AddExpense(),
+                                ),
+                              );
                             },
                             backgroundColor: Colors.blue,
                             foregroundColor: Colors.white,
