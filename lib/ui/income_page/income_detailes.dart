@@ -41,12 +41,7 @@ class DetailesIncome extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => AddIncome(
-                          index: index,
-                          amount: double.parse(amount),
-                          category: cat,
-                          description: des,
-                        ),
+                        builder: (context) => const AddIncome(),
                       ),
                     );
                   },

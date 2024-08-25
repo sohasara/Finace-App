@@ -22,12 +22,7 @@ class IncomePage extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const AddIncome(
-                    amount: null,
-                    category: '',
-                    description: '',
-                    index: null,
-                  ),
+                  builder: (context) => const AddIncome(),
                 ),
               );
             },
